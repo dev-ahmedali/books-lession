@@ -16,6 +16,37 @@
 //   (err) => console.error(new Error('cannot load memebers from randomuser.me'))
 // );
 
-let promises = new Promise((resolve, reject) => {
-  setTimeout(() => reject(new Error("Whoops")), 1000)
-})
+// let promises = new Promise((resolve, reject) => {
+//   setTimeout(() => reject(new Error("Whoops")), 1000)
+// })
+
+// let promises = new Promise((resolve, reject) => {
+//   resolve('done');
+
+//   reject(new Error('...'));
+//   setTimeout(() => resolve('...'));
+// });
+
+// let promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve('done');
+//   }, 1000);
+// });
+
+// promise.then(
+//   (result) => alert(result),
+//   (error) => alert(error)
+// );
+
+// let promise = new Promise((resolve, reject) => {
+//   resolve(1)
+
+//   setTimeout(() => resolve(2), 1000)
+// });
+
+// promise.then(alert)
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+delay(3000).then(() => alert("runs after 3 seconds"))
